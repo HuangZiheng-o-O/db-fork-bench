@@ -60,9 +60,9 @@ class DoltToolSuite(DBToolSuite):
 
     def _prepare_commit(self, message: str = "") -> None:
         try:
-            cmd = "call dolt_add('.');"
+            cmd = "SELECT dolt_add('.');"
             super().execute_sql(cmd)
-            cmd = f"call dolt_commit('-m', '{message}');"
+            cmd = f"SELECT dolt_commit('-m', '{message}');"
             super().execute_sql(cmd)
         except Exception as e:
             # Ignore commit errors (e.g., no changes to commit).
