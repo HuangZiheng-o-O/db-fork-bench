@@ -18,11 +18,6 @@ from util import db_helpers as dbh
 from dblib import result_collector as rc
 from dblib.dolt import DoltToolSuite
 from dblib.neon import NeonToolSuite
-from microbench import sampling
-
-
-def BETA_DIST(sample_size):
-    return sampling.beta_distribution(sample_size, alpha=10, beta=1.0)
 
 
 def OPS_WEIGHT(op_type: tp.OperationType):
